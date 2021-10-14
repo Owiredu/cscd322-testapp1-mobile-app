@@ -3,27 +3,27 @@ import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { AntDesign } from '@expo/vector-icons';
 
-export default function Login() {
+export default function Login({ navigation }) {
     return (
         <View style={styles.container}>
-            <Image style={styles.iconImage} source={ require("../assets/bicycle0.png") } />
+            <Image style={styles.iconImage} source={require("../assets/bicycle0.png")} />
             <Text style={styles.welcomeText}>
                 Welcome to
             </Text>
             <Text style={styles.powerText}>
                 Power Bike Shop
             </Text>
-            <TouchableOpacity style={styles.touchableGmail}>
+            <TouchableOpacity style={styles.touchableGmail} onPress={() => navigation.navigate("Home")}>
                 <AntDesign name="google" size={24} color="rgb(255, 100, 10)" />
                 <Text style={styles.gmailText}>Login with Gmail</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.touchableApple}>
+            <TouchableOpacity style={styles.touchableApple} onPress={() => navigation.navigate("Home")}>
                 <AntDesign name="apple1" size={24} color="white" />
                 <Text style={styles.appleText}>Login with Apple</Text>
             </TouchableOpacity>
             <Text style={styles.nonMemberText}>
                 Not a member? {" "}
-                <Text style={styles.signupText}>
+                <Text style={styles.signupText} onPress={() => navigation.navigate("Home")}>
                     Sign Up
                 </Text>
             </Text>
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     },
 
     appleText: {
-        fontSize: 17,
+        fontSize: 20,
         marginLeft: 15,
         color: "white"
     },
